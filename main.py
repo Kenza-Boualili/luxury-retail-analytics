@@ -1,8 +1,9 @@
+import sqlite3
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 
-# Fixer la graine pour que les résultats soient reproductibles
+# Fixer la graine pour assurer la reproductibilité
 np.random.seed(42)
 
 # 1. Génération des Boutiques phares
@@ -12,7 +13,7 @@ stores = pd.DataFrame({
     'region': ['Europe', 'Asia', 'North America', 'Europe', 'Europe']
 })
 
-# 2. Génération des Produits (Maroquinerie, Joaillerie, etc.)
+# 2. Génération des Produits
 categories = ['Maroquinerie', 'Prêt-à-porter', 'Joaillerie', 'Horlogerie', 'Parfums & Beauté']
 products = pd.DataFrame({
     'product_id': [f'P{i:03d}' for i in range(1, 21)],
@@ -20,7 +21,7 @@ products = pd.DataFrame({
     'unit_price': np.random.choice([450, 1200, 2500, 5000, 12000, 25000], 20)
 })
 
-# 3. Génération des Clients (avec segmentation VIP)
+# 3. Génération des Clients (avec segmentation VIP/VIC)
 customers = pd.DataFrame({
     'customer_id': [f'C{i:04d}' for i in range(1, 201)],
     'tier': np.random.choice(['Standard', 'VIP', 'VIC (Very Important Client)'], 200, p=[0.7, 0.2, 0.1])
@@ -34,7 +35,7 @@ dates = [start_date + timedelta(days=int(np.random.randint(0, 365))) for _ in ra
 store_ids = np.random.choice(stores['store_id'], n_transactions, p=[0.3, 0.25, 0.2, 0.15, 0.1])
 product_ids = np.random.choice(products['product_id'], n_transactions)
 customer_ids = np.random.choice(customers['customer_id'], n_transactions)
-quantities = np.random.choice([1, 2], n_transactions, p=[0.9, 0.1]) # Panier rare dans le luxe
+quantities = np.random.choice([1, 2], n_transactions, p=[0.9, 0.1])
 
 transactions = pd.DataFrame({
     'transaction_id': [f'T{i:05d}' for i in range(1, n_transactions + 1)],
@@ -45,14 +46,23 @@ transactions = pd.DataFrame({
     'quantity': quantities
 })
 
+# Fusions pour enrichir la table des transactions (store_name, region, tier, category, etc.)
+transactions = transactions.merge(stores, on='store_id', how='left')
+transactions = transactions.merge(products, on='product_id', how='left')
+transactions = transactions.merge(customers, on='customer_id', how='left')
+
 # Calcul du montant total par transaction
-transactions = transactions.merge(products, on='product_id')
 transactions['total_amount'] = transactions['quantity'] * transactions['unit_price']
 
-# Sauvegarde des fichiers CSV dans ton dossier de projet
-transactions.to_csv('luxury_transactions.csv', index=False)
+# 5. Sauvegarde des fichiers finaux
+transactions.to_csv('luxury_powerbi_ready.csv', index=False)
 stores.to_csv('luxury_stores.csv', index=False)
 products.to_csv('luxury_products.csv', index=False)
 customers.to_csv('luxury_customers.csv', index=False)
 
-print("Jeu de données généré avec succès dans ton dossier !")
+# 6. Création automatique de la base SQLite et chargement de la table 'transactions'
+conn = sqlite3.connect('luxury_retail.db')
+transactions.to_sql('transactions', conn, if_exists='replace', index=False)
+conn.close()
+
+print("Pipeline exécuté avec succès : Fichiers CSV et base SQLite mis à jour !")
