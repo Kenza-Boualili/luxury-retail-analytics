@@ -81,22 +81,21 @@ ORDER BY total_revenue DESC;
 
 ## 🎯 Strategic Business Recommendations
 
-### 1. Capitalisation sur le Flagship Paris Faubourg Saint-Honoré
-* **Constat :** Paris surpasse l'ensemble des points de vente internationaux avec 12 M€ de Chiffre d'Affaires.
-* **Action :** Analyser les facteurs clés de succès (allocation de stock, expérience client en boutique, formation des *Client Advisors*) afin de modéliser et répliquer ces pratiques à Tokyo-Ginza et New York-Fifth Avenue.
+### 1. Capitalization on the Paris Faubourg Saint-Honoré Flagship
+* **Finding :** Paris outperforms all international retail locations with €12M in revenue.
+* **Action :** Analyze key success factors (stock allocation, in-store client experience, Client Advisor training) to model and replicate these best practices across Tokyo-Ginza and New York-Fifth Avenue.
 
-### 2. Stratégie de Rétention et d'Engagement VIC (Very Important Clients)
-* **Constat :** La clientèle VIP et VIC représente un levier disproportionné de chiffre d'affaires par rapport au nombre d'acheteurs.
-* **Action :** Renforcer les programmes de *Clienteling* exclusifs (privatisation de salons VIP, invitations aux défilés, accès anticipé aux pièces de Haute Maroquinerie).
-
-### 3. Diversification du Mix-Produit (Cross-Selling)
-* **Constat :** La Maroquinerie génère à elle seule plus de 67 % des revenus globaux.
-* **Action :** Développer des stratégies de vente croisée (*cross-selling*) lors des achats de sacs iconiques pour diriger les clients vers le Prêt-à-porter, l'Horlogerie ou la Joaillerie.
-
-### 4. Plan d'Action pour les Boutiques à Fort Panier Moyen
-* **Constat :** Certaines boutiques affichent un volume de transactions plus faible mais un AOV très élevé.
-* **Action :** Adapter le *visual merchandising* et l'assortiment de produits réservé aux boutiques comme London - New Bond Street ou Milan pour maximiser les ventes à très forte valeur ajoutée.
-
+### 2. VIC (Very Important Client) Retention & Engagement Strategy
+* **Finding :** VIP and VIC client segments represent a disproportionate revenue driver relative to the total buyer count.
+* **Action :** Strengthen exclusive clienteling programs (private VIP salon bookings, fashion show invitations, early access to haute maroquinerie pieces).
+* 
+### 3. Product Mix Diversification (Cross-Selling)
+* **Finding :** Leather goods alone account for over 67% of total global revenue.
+* **Action :** Develop targeted cross-selling strategies during iconic bag purchases to guide clients toward ready-to-wear, watchmaking, or high jewelry.
+  
+### 4. Action Plan for High-AOV Boutiques
+* **Finding :** Certain boutiques display lower transaction volumes but maintain very high average order values (AOV).
+* **Action :** Adapt visual merchandising and product assortments specifically for locations like London - New Bond Street and Milan to maximize ultra-high-value sales.
 ---
 
 <p align="center">
