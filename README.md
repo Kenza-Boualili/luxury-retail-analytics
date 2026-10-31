@@ -88,7 +88,7 @@ ORDER BY total_revenue DESC;
 ### 2. VIC (Very Important Client) Retention & Engagement Strategy
 * **Finding :** VIP and VIC client segments represent a disproportionate revenue driver relative to the total buyer count.
 * **Action :** Strengthen exclusive clienteling programs (private VIP salon bookings, fashion show invitations, early access to haute maroquinerie pieces).
-* 
+  
 ### 3. Product Mix Diversification (Cross-Selling)
 * **Finding :** Leather goods alone account for over 67% of total global revenue.
 * **Action :** Develop targeted cross-selling strategies during iconic bag purchases to guide clients toward ready-to-wear, watchmaking, or high jewelry.
