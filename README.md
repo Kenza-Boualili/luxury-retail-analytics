@@ -1,7 +1,7 @@
 # 💎 Luxury Retail Analytics — Performance & Client Segmentation Dashboard
 
 <p align="center">
-  <img src="assets/dashboard_overview.png" alt="Luxury Retail Dashboard Overview" width="100%">
+  <img src="assets/sql_queries_results.png" alt="Luxury Retail Dashboard Overview" width="100%">
 </p>
 
 ---
