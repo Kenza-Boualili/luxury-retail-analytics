@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-This project delivers an end-to-end business intelligence solution tailored for high-end luxury houses (*Maison de Luxe*). Designed to align with the analytical standards of leading prestige groups like **LVMH, Hermès, and Kering**, this interactive platform synthesizes flagship boutique performance, category distribution, average order value (AOV), and high-net-worth client dynamics (VIP / VIC segmentation).
+This project delivers an end-to-end business intelligence solution tailored for high-end luxury houses (*Maison de Luxe*). Designed to align with the analytical standards of leading prestige groups like **LVMH, Hermès, and Kering**, this interactive platform synthesizes flagship boutique performance, category distribution, average order value (AOV), and high-net-worth client dynamics (VIP / VIC segmentation). All datasets used in this project are synthetically generated for educational and analytical purposes. No real customer or company data is used.
 
 The architecture spans the full data analytics lifecycle:
 1. **Data Engineering & Preparation** via Python (`pandas`, `numpy`).
@@ -22,7 +22,7 @@ The architecture spans the full data analytics lifecycle:
 | Layer | Technology | Usage & Functionality |
 | :--- | :--- | :--- |
 | **Data Engine** | `Python 3.10+` | Dataset orchestration, transaction modeling, schema normalization |
-| **Database** | `SQL (SQLite / PostgreSQL)` | Relational querying, aggregation, client tier distribution |
+| **Database** | `SQL (SQLite)` | Relational querying, aggregation, client tier distribution |
 | **Visual Analytics** | `Power BI Desktop` | Interactive dashboarding, dynamic slicers, DAX measures |
 | **Documentation** | `Markdown / VS Code` | Technical reporting and executive insights |
 
@@ -59,7 +59,7 @@ ORDER BY total_revenue DESC;
 SELECT 
     product_id,
     category,
-    COUNT(transaction_id) AS units_sold,
+    SUM(quantity) AS units_sold,
     ROUND(SUM(total_amount), 2) AS total_revenue
 FROM transactions
 GROUP BY product_id, category
